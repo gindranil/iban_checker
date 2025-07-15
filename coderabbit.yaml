@@ -1,0 +1,87 @@
+# yaml-language-server: $schema=https://storage.googleapis.com/coderabbit_public_assets/schema.v2.json
+
+language: en-US
+early_access: true
+enable_free_tier: true
+
+reviews:
+  profile: chill
+  high_level_summary: true
+  review_status: true
+  commit_status: true
+  auto_review:
+    enabled: true
+    auto_incremental_review: true
+    drafts: false
+  finishing_touches:
+    docstrings:
+      enabled: true
+    unit_tests:
+      enabled: true
+
+# -------------------------------------
+# Actionable Support via Tools
+# -------------------------------------
+tools:
+  # ✅ Code Optimization, Guidelines, Refactoring
+  eslint:
+    enabled: true
+  ruff:
+    enabled: true         # Python alternative to flake8, fast linter
+  flake8:
+    enabled: true         # Python linter for standards & style
+  phpmd:
+    enabled: true         # PHP Mess Detector – refactoring suggestions
+  phpcs:
+    enabled: true         # ✅ PSR Compliance (PHP)
+  phpstan:
+    enabled: true         # PHP static analyzer
+  detekt:
+    enabled: true         # Kotlin (optional)
+  biome:
+    enabled: true         # Fast formatter/linter for JS/TS/JSON
+
+  # ✅ Accessibility & WCAG Validation
+  htmlhint:
+    enabled: true         # Basic HTML rules + custom WCAG rule support
+  eslint-plugin-jsx-a11y:
+    enabled: true         # JS/React accessibility – use via ESLint config
+
+  # ✅ Boilerplate & Folder Structure Checks
+  ast-grep:
+    rule_dirs: ["./coderabbit-rules"]
+    util_dirs: []
+    essential_rules: true
+
+  # ✅ Additional Linting / Secure Coding
+  gitleaks:
+    enabled: true
+  markdownlint:
+    enabled: true
+  yamllint:
+    enabled: true
+  dotenvLint:
+    enabled: true
+
+# -------------------------------------
+# Optional Filtering or Instruction Customization
+# -------------------------------------
+path_filters: []
+path_instructions:
+  - path: "**/views/**/*.blade.php"
+    instructions: "Ensure semantic markup and ARIA compliance in Laravel Blade views."
+
+# -------------------------------------
+# Optional GitHub / Jira Integration
+# -------------------------------------
+chat:
+  auto_reply: true
+  integrations:
+    jira:
+      usage: auto
+
+knowledge_base:
+  opt_out: false
+  code_guidelines:
+    enabled: true
+    filePatterns: ["**/*.php", "**/*.js", "**/*.html", "**/*.ts", "**/*.jsx", "**/*.tsx"]
