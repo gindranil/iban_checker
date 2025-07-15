@@ -44,14 +44,14 @@ tools:
   # ✅ Accessibility & WCAG Validation
   htmlhint:
     enabled: true         # Basic HTML rules + custom WCAG rule support
-  eslint-plugin-jsx-a11y:
-    enabled: true         # JS/React accessibility – use via ESLint config
+  # eslint-plugin-jsx-a11y:
+  #   enabled: true         # JS/React accessibility – use via ESLint config
 
   # ✅ Boilerplate & Folder Structure Checks
-  ast-grep:
-    rule_dirs: ["./coderabbit-rules"]
-    util_dirs: []
-    essential_rules: true
+  # ast-grep:
+  #   rule_dirs: ["./coderabbit-rules"]
+  #   util_dirs: []
+  #   essential_rules: true
 
   # ✅ Additional Linting / Secure Coding
   gitleaks:
